@@ -8,4 +8,4 @@ npm install && npm start
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-![Screenshot 2023-02-05 at 12 46 08 AM](https://user-images.githubusercontent.com/74216448/216803886-d5c0617f-56ff-41e2-9cdd-cc50672018ee.png)
+![Screenshot 2023-02-05 at 1 14 45 AM](https://user-images.githubusercontent.com/74216448/216804729-43358704-dcc4-4425-b171-cdac97c8b256.png)
