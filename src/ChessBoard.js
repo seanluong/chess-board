@@ -17,7 +17,7 @@ const colKey = (colIdx) => colIdxToKey[colIdx];
 
 const cellKey = (rowIdx, colIdx) => `${rowKey(rowIdx)}:${colKey(colIdx)}`;
 
-const isLightCell = (rowIdx, colIdx) => (rowIdx + colIdx) % 2 === 0;
+const isLightCell = (rowIdx, colIdx) => (rowIdx + colIdx) % 2 === 1;
 
 const cellSide = (rowIdx, colIdx) => {
     const classes = [];
