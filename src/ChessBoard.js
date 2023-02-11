@@ -1,4 +1,4 @@
-import './Board.scss';
+import './ChessBoard.scss';
 
 const rowKey = (rowIdx) => `${rowIdx + 1}`;
 
@@ -53,6 +53,50 @@ const Row = ({row, rowIdx}) => {
     );
 }
 
+const Board = ({board}) => {
+    return (
+        <div className="board">
+            {
+                board.map((row, rowIdx) => {
+                    return  (
+                        <Row key={rowKey(rowIdx)} row={row} rowIdx={rowIdx} />
+                    );
+                })
+            }
+        </div>
+    )
+}
+
+const RowNames = ({gridArea, direction}) => {
+    const names = [1, 2, 3, 4, 5, 6, 7, 8];
+    return (
+        <div className="row-names" style={{ gridArea }}>
+            {
+                names.map((name) => 
+                    <div key={`${direction} ${name}`} className={`row-name ${direction}`}>
+                        <strong>{name}</strong>
+                    </div>
+                )
+            }
+        </div>
+    );
+}
+
+const ColNames = ({ gridArea, direction }) => {
+    const names = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+    return (
+        <div className="col-names" style={{ gridArea }}>
+            {
+                names.map((name) => 
+                    <div key={`${direction} ${name}`} className={`col-name ${direction}`}>
+                        <strong>{name}</strong>
+                    </div>
+                )
+            }
+        </div>
+    );
+}
+
 export const ChessBoard = () => {
     const board = [
         ['♖', '♘', '♗', '♕', '♔', '♗', '♘', '♖'],
@@ -65,14 +109,14 @@ export const ChessBoard = () => {
         ['♜', '♞', '♝', '♛','♚', '♝', '♞', '♜'],
     ]
     return (
-        <div className="board">
-            {
-                board.map((row, rowIdx) => {
-                    return  (
-                        <Row key={rowKey(rowIdx)} row={row} rowIdx={rowIdx} />
-                    );
-                })
-            }
+        <div className="chess-board">
+            <ColNames gridArea="1 / 2 / span 1 / span 8" direction="top" />
+
+            <RowNames gridArea="2 / 1 / span 8 / span 1" direction="left" />
+            <Board board={board} />
+            <RowNames gridArea="2 / 10 / span 8 / span 1" direction="right" />
+
+            <ColNames gridArea="10 / 2 / span 1 / span 8" direction="bottom" />
         </div>
     );
 }
