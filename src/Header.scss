@@ -1,0 +1,33 @@
+$text-color: rgb(255, 255, 255);
+$background-color: rgb(5, 5, 29);
+
+header {
+    flex: 0 0 10vh;
+    background-color: $background-color;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    display: flex;
+
+    a {
+        margin: auto 1rem;
+        display: flex;
+        align-items: center;
+        color: $text-color;
+        border-radius: 3px;
+        box-sizing: border-box;
+        padding: 0.5rem;
+        text-decoration: none;
+
+        svg:first-child {
+            margin-right: 0.5rem;
+        }
+
+        &:hover {
+            color: $background-color;
+            background-color: $text-color;
+            box-shadow: 2px 2px 2px rgba(29, 61, 115, 0.7);
+        }
+    }
+}

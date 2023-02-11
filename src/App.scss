@@ -4,25 +4,10 @@
   justify-content: space-between;
   min-height: 100vh;
   background-image: radial-gradient(circle, #ebf2fe, #060edd);
-
-  header {
-    min-height: 5vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: white;
-  }
   
   main {
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  
-  footer {
-    min-height: 5vh;
-    display: flex;
-    color: white;
   }
 }
