@@ -1,0 +1,47 @@
+@import 'variables';
+
+.col-names {
+    display: flex;
+    justify-content: space-between;
+
+    div.col-name {
+        display: flex;
+        justify-content: center;
+        flex: 1 1 100%;
+        text-transform: uppercase;
+        font-size: $name-size;
+
+        &.top {
+            align-items: flex-end;
+            padding-bottom: 1em;
+        }
+
+        &.bottom {
+            align-items: flex-start;
+            padding-top: 1em;
+        }
+    }
+}
+
+.row-names {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+
+    div.row-name {
+        display: flex;
+        align-items: center;
+        flex: 1 1 100%;
+        font-size: $name-size;
+
+        &.left {
+            justify-content: flex-end;
+            margin-right: 1em;
+        }
+
+        &.right {
+            justify-content: flex-start;
+            margin-left: 1em;
+        }
+    }
+}
