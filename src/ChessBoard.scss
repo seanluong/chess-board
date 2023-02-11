@@ -15,7 +15,7 @@ $name-size: min(2.5vw, 2.5vh);
         div.col-name {
             display: flex;
             justify-content: center;
-            width: 100%;
+            flex: 1 1 100%;
             text-transform: uppercase;
             font-size: $name-size;
 
@@ -37,9 +37,9 @@ $name-size: min(2.5vw, 2.5vh);
         justify-content: space-between;
 
         div.row-name {
-            height: 100%;
             display: flex;
             align-items: center;
+            flex: 1 1 100%;
             font-size: $name-size;
 
             &.left {
@@ -58,7 +58,7 @@ $name-size: min(2.5vw, 2.5vh);
 .board {
     box-sizing: border-box;
     border: 5px solid rgb(117, 56, 14);
-    box-shadow: 15px 15px 2px rgba(117, 55, 14, 0.5);
+    box-shadow: 0.5em 0.5em 2px rgba(117, 55, 14, 0.5);
     display: flex;
     flex-direction: column-reverse;
     align-items: stretch;
