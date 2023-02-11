@@ -31,13 +31,13 @@ export const ChessBoard = () => {
 
     return (
         <div className={`chess-board ${pieceColor}-piece`}>
-            <ColNames gridArea="1 / 2 / span 1 / span 8" direction="top" />
+            <ColNames direction="top" />
 
-            <RowNames gridArea="2 / 1 / span 8 / span 1" direction="left" />
+            <RowNames direction="left" />
             <Board board={pieceColor === WHITE ? WHITE_BOARD : BLACK_BOARD} />
-            <RowNames gridArea="2 / 10 / span 8 / span 1" direction="right" />
+            <RowNames direction="right" />
 
-            <ColNames gridArea="10 / 2 / span 1 / span 8" direction="bottom" />
+            <ColNames direction="bottom" />
         </div>
     );
 }
