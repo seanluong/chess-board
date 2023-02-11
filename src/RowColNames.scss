@@ -1,15 +1,16 @@
 @import 'variables';
 
+
+.row-names,
 .col-names {
     display: flex;
     justify-content: space-between;
+}
 
+.col-names {
     div.col-name {
-        display: flex;
         justify-content: center;
-        flex: 1 1 100%;
         text-transform: uppercase;
-        font-size: $name-size;
 
         &.top {
             align-items: flex-end;
@@ -24,15 +25,10 @@
 }
 
 .row-names {
-    display: flex;
     flex-direction: column-reverse;
-    justify-content: space-between;
 
     div.row-name {
-        display: flex;
         align-items: center;
-        flex: 1 1 100%;
-        font-size: $name-size;
 
         &.left {
             justify-content: flex-end;
@@ -43,5 +39,16 @@
             justify-content: flex-start;
             margin-left: 1em;
         }
+    }
+}
+
+div.row-name,
+div.col-name {
+    display: flex;
+    flex: 1 1 100%;
+    font-size: 1em;
+
+    @media screen and (min-width: 500px) {
+        font-size: 1.5em;
     }
 }
