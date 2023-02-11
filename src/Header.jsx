@@ -9,7 +9,7 @@ export const Header = () => {
     
     return (
         <header>
-            <a href={"https://github.com/seanluong/chess-board"} target={"_blank"}>
+            <a href={"https://github.com/seanluong/chess-board"} target={"_blank"} rel="noreferrer">
                 <GitHubIcon />Source
             </a>
             <div className='piece-color-switch'>
