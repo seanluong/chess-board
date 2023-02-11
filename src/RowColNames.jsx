@@ -1,7 +1,12 @@
+import { BLACK, usePieceColorContext } from "./PieceColorContext";
 import "./RowColNames.scss";
 
 export const RowNames = ({gridArea, direction}) => {
     const names = [1, 2, 3, 4, 5, 6, 7, 8];
+    const { pieceColor } = usePieceColorContext();
+    if (pieceColor === BLACK) {
+        names.reverse();
+    }
     return (
         <div className="row-names" style={{ gridArea }}>
             {
@@ -17,6 +22,10 @@ export const RowNames = ({gridArea, direction}) => {
 
 export const ColNames = ({ gridArea, direction }) => {
     const names = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+    const { pieceColor } = usePieceColorContext();
+    if (pieceColor === BLACK) {
+        names.reverse();
+    }
     return (
         <div className="col-names" style={{ gridArea }}>
             {

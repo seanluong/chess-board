@@ -24,7 +24,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: min(7vw, 7vh);
+    font-size: $piece-font-size;
 
     &.dark {
         background-color: rgba(82, 103, 8, 0.9);
