@@ -1,5 +1,7 @@
 # Chess Board
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/00f24fc4-3137-42ab-8095-45a4cfce97f2/deploy-status)](https://app.netlify.com/sites/css-chess-board/deploys)
+
 To run the code, use:
 
 ```
