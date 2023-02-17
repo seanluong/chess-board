@@ -13,7 +13,6 @@ export const Header = () => {
             <AppBar position='static'>
                 <Toolbar sx={{
                     bgcolor: "rgb(5, 5, 29)",
-                    color: "rgb(255, 255, 255)",
                     justifyContent: "space-between",
                 }}>
                     <Button variant="contained" href={gitHubUrl}

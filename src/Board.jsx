@@ -34,7 +34,6 @@ const Row = ({row, rowIdx}) => {
                     return (
                         <Paper key={cellKey(rowIdx, colIdx)} sx={{
                             flex: "1 1 min(9vw, 9vh)",
-                            height: "100%",
                             display: "flex",
                             alignItems: "center",
                             justifyContent: "center",
