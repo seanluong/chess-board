@@ -1,4 +1,4 @@
-import './Board.scss';
+import { Paper, Stack } from '@mui/material';
 
 const rowKey = (rowIdx) => `${rowIdx + 1}`;
 
@@ -19,43 +19,45 @@ const cellKey = (rowIdx, colIdx) => `${rowKey(rowIdx)}:${colKey(colIdx)}`;
 
 const isLightCell = (rowIdx, colIdx) => (rowIdx + colIdx) % 2 === 1;
 
-const cellSide = (rowIdx, colIdx) => {
-    const classes = [];
-    if (rowIdx === 0) {
-        classes.push('bottom');
-    } else if (rowIdx === 7) {
-        classes.push('top');
-    }
-
-    if (colIdx === 0) {
-        classes.push('left');
-    } else if (colIdx === 7) {
-        classes.push('right');
-    }
-    return classes.join(" ");
-}
-
 const Row = ({row, rowIdx}) => {
+    const darkCellBackgroundColor = "rgba(82, 103, 8, 0.9)";
+    const lightCellBackgroundColor = "rgba(230, 233, 220, 0.9)";
+    const cellSize = "min(7vw, 7vh)";
     return (
-        <div className="row">
+        <Stack direction="row" sx={{
+            display: "flex",
+            flex: `1 1 ${cellSize}`,
+        }}>
             {
                 row.map((piece, colIdx) => {
-                    const cellSideClass = cellSide(rowIdx, colIdx);
-                    const cellColorClass = isLightCell(rowIdx, colIdx) ? 'light' : 'dark';
+                    const isLight = isLightCell(rowIdx, colIdx);
                     return (
-                        <div key={cellKey(rowIdx, colIdx)} className={`cell ${cellSideClass} ${cellColorClass}`}>
+                        <Paper key={cellKey(rowIdx, colIdx)} sx={{
+                            flex: "1 1 min(9vw, 9vh)",
+                            height: "100%",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            bgcolor: isLight ? lightCellBackgroundColor : darkCellBackgroundColor,
+                            borderRadius: 0,
+                            fontSize: cellSize,
+                        }} elevation={0}>
                             {piece}
-                        </div>
+                        </Paper>
                     );
                 })
             }
-        </div>
+        </Stack>
     );
 }
 
 export const Board = ({board}) => {
     return (
-        <div className="board">
+        <Paper sx={{
+            display: "flex",
+            flexDirection: "column-reverse",
+            gridArea: "2 / 2 / span 8 / span 8",
+        }} elevation={4}>
             {
                 board.map((row, rowIdx) => {
                     return  (
@@ -63,6 +65,6 @@ export const Board = ({board}) => {
                     );
                 })
             }
-        </div>
+        </Paper>
     )
 }

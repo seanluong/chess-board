@@ -1,5 +1,5 @@
 import { Board } from './Board';
-import './ChessBoard.scss';
+import { Paper } from "@mui/material";
 import { usePieceColorContext, WHITE } from './PieceColorContext';
 import { ColNames, RowNames } from './RowColNames';
 
@@ -30,14 +30,19 @@ export const ChessBoard = () => {
     const { pieceColor } = usePieceColorContext();
 
     return (
-        <div className={`chess-board ${pieceColor}-piece`}>
-            <ColNames direction="top" />
+        <Paper sx={{
+            display: "grid",
+            gridTemplate: "repeat(10, min(9vw, 9vh)) / repeat(10, min(9vw, 9vh))",
+            bgcolor: "rgba(0, 0, 0, 0.2)",
+            border: "none",
+        }} variant="outlined">
+            <ColNames side="top" />
 
-            <RowNames direction="left" />
+            <RowNames side="left" />
             <Board board={pieceColor === WHITE ? WHITE_BOARD : BLACK_BOARD} />
-            <RowNames direction="right" />
+            <RowNames side="right" />
 
-            <ColNames direction="bottom" />
-        </div>
+            <ColNames side="bottom" />
+        </Paper>
     );
 }

@@ -1,8 +1,0 @@
-@import 'variables';
-
-.chess-board {
-    display: grid;
-    grid-template: 
-        repeat(10, $cell-size) / repeat(10, $cell-size)
-    ;
-}

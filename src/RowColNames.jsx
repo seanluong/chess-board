@@ -1,40 +1,62 @@
+import { Stack, Paper } from "@mui/material";
 import { BLACK, usePieceColorContext } from "./PieceColorContext";
-import "./RowColNames.scss";
 
-export const RowNames = ({ direction }) => {
+export const RowNames = ({ side }) => {
     const names = [1, 2, 3, 4, 5, 6, 7, 8];
     const { pieceColor } = usePieceColorContext();
     if (pieceColor === BLACK) {
         names.reverse();
     }
     return (
-        <div className={`row-names ${direction}`}>
+        <Stack direction="column-reverse" sx={{
+            gridArea: (side === "left" ? "2 / 1 / span 8 / span 1" : "2 / 10 / span 8 / span 1"),
+        }}>
             {
                 names.map((name) => 
-                    <div key={`${direction} ${name}`} className={`row-name ${direction}`}>
+                    <Paper key={`${side} ${name}`} elevation={0} sx={{
+                        flex: "1 1 100%",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        bgcolor: "transparent",
+                        border: "none",
+                        textTransform: "uppercase",
+                        fontSize: { xs: "1em", sm: "1.5em" }
+                    }}>
                         <strong>{name}</strong>
-                    </div>
+                    </Paper>
                 )
             }
-        </div>
+        </Stack>
     );
 }
 
-export const ColNames = ({ direction }) => {
+export const ColNames = ({ side }) => {
     const names = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
     const { pieceColor } = usePieceColorContext();
     if (pieceColor === BLACK) {
         names.reverse();
     }
     return (
-        <div className={`col-names ${direction}`}>
+        <Stack direction="row" sx={{
+            gridArea: (side === "top" ? "1 / 2 / span 1 / span 8" : "10 / 2 / span 1 / span 8"),
+            alignItems: "center",
+        }}>
             {
                 names.map((name) => 
-                    <div key={`${direction} ${name}`} className={`col-name ${direction}`}>
+                    <Paper key={`${side} ${name}`} elevation={0} sx={{
+                        flex: "1 1 100%",
+                        textAlign: "center",
+                        bgcolor: "transparent",
+                        border: "none",
+                        textTransform: "uppercase",
+                        fontSize: { xs: "1em", sm: "1.5em" },
+
+                    }}>
                         <strong>{name}</strong>
-                    </div>
+                    </Paper>
                 )
             }
-        </div>
+        </Stack>
     );
 }
